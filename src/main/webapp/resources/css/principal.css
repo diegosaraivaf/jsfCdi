@@ -1,0 +1,9 @@
+/* faz com que os componentes do primefaces nao fiquem gigantes */
+.ui-widget {
+	font-size: 12px;
+}
+
+
+
+
+       

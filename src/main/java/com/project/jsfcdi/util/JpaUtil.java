@@ -7,8 +7,12 @@ import javax.persistence.Persistence;
 public class JpaUtil {
 	
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("ProjetoPU");
+	private static EntityManager manager;
 	
 	public static EntityManager getEntityManager() {
-		return factory.createEntityManager();
+		if(manager == null || !manager.isOpen()) {
+			manager = factory.createEntityManager();
+		}
+		return  manager;
 	}
 }
